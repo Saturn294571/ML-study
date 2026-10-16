@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ML 스터디</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">ML 스터디</a>
+      <nav aria-label="사용자 메뉴">
+        <a id="login-link" href="login.html">로그인</a>
+      </nav>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <h2>학습 과정</h2>
+        <nav aria-label="스터디 주제">
+          <p class="nav-group">기초 다지기</p>
+          <a href="#python">Python 기초</a>
+          <a href="#web">웹 개발 기초</a>
+          <a href="#git">Git과 GitHub</a>
+          <p class="nav-group">머신러닝</p>
+          <a href="#data">데이터와 시각화</a>
+          <a href="#regression">회귀와 분류</a>
+          <a href="#neural-network">신경망과 딥러닝</a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <section class="welcome">
+          <p class="eyebrow">함께 배우고, 직접 만들어 보기</p>
+          <h1>ML 스터디 게시판</h1>
+          <p>강의 노트와 질문, 작은 프로젝트 기록을 공유합니다.</p>
+          <a class="button-link" href="write.html">게시물 작성</a>
+        </section>
+
+        <section aria-labelledby="posts-heading">
+          <h2 id="posts-heading">최근 게시물</h2>
+          <div id="post-list" class="post-list"></div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
