@@ -19,6 +19,7 @@
 
 ## 디렉토리 구조
 
+```bash
 ML_study/
 ├── class_0/ # 파이썬 기초
     ├── lecture/ # 강의자료 폴더
@@ -35,7 +36,7 @@ ML_study/
 └── playground/ # 연습공간
     ├── student_1/ # 학생 개인 연습 폴더
     └── student_2/
-
+```
 
 ## 에이전트 목적
 

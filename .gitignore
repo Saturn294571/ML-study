@@ -1,0 +1,3 @@
+# all .venv and .conda folder
+.venv/
+.conda/

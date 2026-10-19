@@ -1,0 +1,64 @@
+html {
+    font-size : 10px; 
+    /* px : 픽셀 */
+    font-family: 
+    "Open Sans", sans-serif;
+    background-color: #00539f;
+}
+
+/* 선택자 : 'html', 'h1', 'p,li' ... */
+/* 참고 : 선택자의 종류
+1) tag 선택자 : p, html, ... ; html 태그와 동일
+2) ID 선택자 : #my-id -> <extag id="my-id"> 선택
+3) class 선택자 : .my-class -> <extag class="my-class"> 선택
+4) attribute 선택자 : ex) extag[exattr] -> <extag exattr='...'> 는 선택.
+but, exattr 속성 없는 <extag>는 선택 X
+5) peseudo class 선택자 : extag:hover -> extag는 선택. 하지만 마우스가 extag 위에 있을 때만 선택.
+*/
+h1 {
+    font-size : 60px;
+    text-align: center;
+/* (아래 : css 레이아웃 이후 설명) */
+    margin: 0;
+    padding: 20px 0;
+    color: #00539f;
+    text-shadow: 3px 3px 1px black;
+}
+
+p,
+li {
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+/* CSS 레이아웃과 박스모델 */
+/* 페이지를 공간하는 각 블록들의 속성
+padding : 내용과 border 사이 빈공간
+border : 블록을 감싸는 선
+margin : border 밖 빈 공간
+
+(참고) 추가 개념
+width : (한 요소의 너비)
+background-color: 요소의 콘텐츠와 padding 의 배경 색
+color: 한 요소의 콘텐츠 색 (일반적으로 글자색)
+text-shadow: 한 요소 안의 글자에 그림자를 적용
+display: 요소의 표시 형식을 설정합니다 (이것에 대해선 아직 걱정하지마세요)
+*/
+
+
+body {
+  width: 600px;
+  margin: 0 auto;
+  background-color: #ff9500;
+  padding: 0 20px 20px 20px;
+  border: 5px solid black;
+}
+/* body 외부 정렬 */
+
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+/* 이미지 가운데 정렬 */
