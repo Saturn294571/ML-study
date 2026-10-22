@@ -27,5 +27,6 @@ services:
     cap_drop:
       - ALL
 
-    # 엔비디아 GPU 컨테이너 설치/설정 완료후 활성
+    # ToDo : (에이전트 지침 : 명시적인 명령 없이 절대 임의로 수행 하지 말 것) HOML 1부 ML 진도 완료 후 2부 NN과 딥러닝 진도 나가기 전에 엔비디아 cuda 컨테이너 툴킷 설치/설정 완료후 활성
+    # https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
     # gpus : all

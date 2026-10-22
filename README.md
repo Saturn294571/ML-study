@@ -68,15 +68,40 @@
 
 ### 주피터 원격 서버 접속
 
-### Docker 관련
+- vscode 접속 전 tailscale 설치 후 강의자에게 초대 이메일 받기
+  - (강의자) 기본포트 8888; tailscale ACL에서 해당 포트만 권한 허용
+    - 권한 설정 페이지 내 access control 탭 [링크](https://login.tailscale.com/)
+
+- vscode 내 ipynb 파일 내에서 커널 설정
+    1) 우상단 'select kernel'
+    2) Select Another Kernel...
+    3) Existing Jupyter Server...
+    4) 강의자가 준 URL 입력
+
+- ML서버 운영시간 : 매일 12:00-24:00 (일정/시간 변동 O)
+    - 해당 시간에 연습하고 싶은데 안켰으면 강의자한테 카톡 주자
+
+- (추천) 강의자 서버 안열렸을 때도 연습하고싶다면
+    - miniforge 설치 후 강의자에게 실행환경 문의
+    - mamba로 똑같이 설치하거나 아님 freeze된 프로필 받기
+    - 대신 과정은 직접 챗봇 끼고 해보기
+    - 혹은 구글 코랩도 가능하나 개인적으로 비추(무료로는 성능 제약 심함 + 세션 초기화)
+
+### (강의자) 직접 주피터 랩 통해 서버 열기
+
+```bash 
+bash ./jpt-lab-activate.sh
+```
+
+### (강의자) Docker 사용해 주피터 서버 열기
 
 - 실행 및 생명주기 관리
-  - docker compose up: docker-compose.yml 파일에 정의된 서비스를 생성하고 시작합니다. (-d 옵션을 추가하면 백그라운드에서 실행)
+  - docker compose up: compose.yaml 파일에 정의된 서비스를 생성하고 시작합니다. (-d 옵션을 추가하면 백그라운드에서 실행)
   - docker compose down: 실행 중인 컨테이너, 네트워크, 볼륨 등을 중지하고 제거합니다.
   - docker compose start: 멈춰 있는(stopped) 컨테이너를 다시 시작합니다.
   - docker compose stop: 컨테이너를 삭제하지 않고 실행만 잠시 중지합니다.
   - docker compose restart: 실행 중이거나 멈춘 서비스를 재시작합니다.
-  - docker compose build: docker-compose.yml에 설정된 이미지들을 빌드 또는 재빌드합니다.
+  - docker compose build: compose.yaml에 설정된 이미지들을 빌드 또는 재빌드합니다.
 
 - 상태 및 로그 확인
   - docker compose ps: 현재 동작 중인(관리되는) 컨테이너의 상태와 포트 정보를 확인합니다.
@@ -84,6 +109,6 @@
 
 - 컨테이너 제어 및 기타
   - docker compose exec [서비스명] [명령어]: 실행 중인 특정 컨테이너 내부로 들어가 명령어를 실행합니다 (예: docker compose exec web bash 또는 sh).
-  - docker compose config: 작성한 docker-compose.yml 설정과 환경 변수가 올바르게 적용되었는지 확인합니다.
-  - docker compose pull: docker-compose.yml에 정의된 이미지들을 최신 버전으로 미리 다운로드(Pull)합니다.
-  - -f [파일경로]: 기본 docker-compose.yml 대신 다른 이름이나 경로의 설정 파일을 지정할 때 사용합니다 (예: docker compose -f docker-compose.prod.yml up).
+  - docker compose config: 작성한 compose.yaml 설정과 환경 변수가 올바르게 적용되었는지 확인합니다.
+  - docker compose pull: compose.yaml에 정의된 이미지들을 최신 버전으로 미리 다운로드(Pull)합니다.
+  - -f [파일경로]: 기본 compose.yaml 대신 다른 이름이나 경로의 설정 파일을 지정할 때 사용합니다 (예: docker compose -f docker-compose.prod.yml up).
