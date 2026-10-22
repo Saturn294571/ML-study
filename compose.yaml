@@ -1,0 +1,31 @@
+services:
+  jupyter:
+    image: quay.io/jupyter/scipy-notebook:latest
+    container_name: ml-study-jupyter
+
+    ports:
+      - "${TAILSCALE_IP}:8888:8888"
+
+    environment:
+      JUPYTER_TOKEN: "${JUPYTER_TOKEN}"
+
+    volumes:
+      - ./class2_ML:/home/jovyan/work
+
+    working_dir: /home/jovyan/work
+
+    command:
+      - start-notebook.py
+      - --ServerApp.root_dir=/home/jovyan/work
+
+    mem_limit: 16g
+    cpus: 6
+
+    security_opt:
+      - no-new-privileges:true
+
+    cap_drop:
+      - ALL
+
+    # 엔비디아 GPU 컨테이너 설치/설정 완료후 활성
+    # gpus : all

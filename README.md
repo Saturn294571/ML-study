@@ -63,3 +63,27 @@
 ## 자료와 저작권
 
 스터디에서 참고하는 온라인·오프라인 강의와 자료의 출처 및 이용 원칙은 [`copyright.md`](copyright.md)를 확인해 주세요.
+
+## class2_ML 관련 설정
+
+### 주피터 원격 서버 접속
+
+### Docker 관련
+
+- 실행 및 생명주기 관리
+  - docker compose up: docker-compose.yml 파일에 정의된 서비스를 생성하고 시작합니다. (-d 옵션을 추가하면 백그라운드에서 실행)
+  - docker compose down: 실행 중인 컨테이너, 네트워크, 볼륨 등을 중지하고 제거합니다.
+  - docker compose start: 멈춰 있는(stopped) 컨테이너를 다시 시작합니다.
+  - docker compose stop: 컨테이너를 삭제하지 않고 실행만 잠시 중지합니다.
+  - docker compose restart: 실행 중이거나 멈춘 서비스를 재시작합니다.
+  - docker compose build: docker-compose.yml에 설정된 이미지들을 빌드 또는 재빌드합니다.
+
+- 상태 및 로그 확인
+  - docker compose ps: 현재 동작 중인(관리되는) 컨테이너의 상태와 포트 정보를 확인합니다.
+  - docker compose logs: 컨테이너들의 로그를 출력합니다 (-f 옵션으로 실시간 로그 확인 가능).
+
+- 컨테이너 제어 및 기타
+  - docker compose exec [서비스명] [명령어]: 실행 중인 특정 컨테이너 내부로 들어가 명령어를 실행합니다 (예: docker compose exec web bash 또는 sh).
+  - docker compose config: 작성한 docker-compose.yml 설정과 환경 변수가 올바르게 적용되었는지 확인합니다.
+  - docker compose pull: docker-compose.yml에 정의된 이미지들을 최신 버전으로 미리 다운로드(Pull)합니다.
+  - -f [파일경로]: 기본 docker-compose.yml 대신 다른 이름이나 경로의 설정 파일을 지정할 때 사용합니다 (예: docker compose -f docker-compose.prod.yml up).
